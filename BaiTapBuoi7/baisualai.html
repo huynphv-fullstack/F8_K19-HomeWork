@@ -10,16 +10,12 @@
         :root{
           --panel-bg:#f9fafb;
           --panel-border:#ddd;
-
           --title-bg:#f98000;
           --title-text:#f9fafb;
-
           --group-bg:#e5e7eb;
           --group-text:#111827;
-
           --label-bg:#eef2ff;
           --label-text:#4b5563;
-
           --content-area:#f3f4f6;
           --content-bg:#ffffff;
           --content-text:#9ca3af;
@@ -32,7 +28,6 @@
           --themelight-text:#111827;
           --themedark-bg:#111827;
           --themedark-text:#f9fafb;
-
 
           --red-bg:#fee2e2;
           --red-text:#7f1d1d;
@@ -235,55 +230,53 @@
 </head>
 
 <body>
-<div name="panel">
-    <h1>Trung tâm cấu hình giao diện (Demo)</h1>
+    <div name="panel">
+        <h1>Trung tâm cấu hình giao diện (Demo)</h1>
 
-    <!-- THEME -->
-    <p class="group-title">Chọn giao diện (Theme):</p>
-    <input type="radio" name="theme" id="light" checked>
-    <label for="light">Light</label>
-    <input type="radio" name="theme" id="dark">
-    <label for="dark">Dark</label>
+        <!-- THEME -->
+        <p class="group-title">Chọn giao diện (Theme):</p>
+        <input type="radio" name="theme" id="light" checked>
+        <label for="light">Light</label>
+        <input type="radio" name="theme" id="dark">
+        <label for="dark">Dark</label>
 
-    <!-- COLOR -->
-    <p class="group-title">Chọn màu chủ đạo (Color):</p>
-    <input type="radio" name="color" id="red" checked>
-    <label for="red">Red</label>
-    <input type="radio" name="color" id="blue">
-    <label for="blue">Blue</label>
-    <input type="radio" name="color" id="green">
-    <label for="green">Green</label>
+        <!-- COLOR -->
+        <p class="group-title">Chọn màu chủ đạo (Color):</p>
+        <input type="radio" name="color" id="red" checked>
+        <label for="red">Red</label>
+        <input type="radio" name="color" id="blue">
+        <label for="blue">Blue</label>
+        <input type="radio" name="color" id="green">
+        <label for="green">Green</label>
 
-    <!-- LANGUAGE -->
-    <p class="group-title">Chọn ngôn ngữ (Language):</p>
-    <input type="radio" name="lang" id="vi" checked>
-    <label for="vi">VI</label>
-    <input type="radio" name="lang" id="en">
-    <label for="en">EN</label>
+        <!-- LANGUAGE -->
+        <p class="group-title">Chọn ngôn ngữ (Language):</p>
+        <input type="radio" name="lang" id="vi" checked>
+        <label for="vi">VI</label>
+        <input type="radio" name="lang" id="en">
+        <label for="en">EN</label>
 
-    <!-- OPTIONS -->
-    <p class="group-title">Tùy chọn bổ sung (Options - Checkbox):</p>
-    <input type="checkbox" id="advanced">
-    <label for="advanced">Hiển thị mô tả nâng cao</label>
-    <input type="checkbox" id="eco">
-    <label for="eco">Bật chế độ Eco</label>
-    <input type="checkbox" id="warning">
-    <label for="warning">Hiển thị cảnh báo quan trọng</label>
+        <!-- OPTIONS -->
+        <p class="group-title">Tùy chọn bổ sung (Options - Checkbox):</p>
+        <input type="checkbox" id="advanced">
+        <label for="advanced">Hiển thị mô tả nâng cao</label>
+        <input type="checkbox" id="eco">
+        <label for="eco">Bật chế độ Eco</label>
+        <input type="checkbox" id="warning">
+        <label for="warning">Hiển thị cảnh báo quan trọng</label>
 
-    <div class="contentArea">
-        <p class="contentDefault theme-light">Theme Light: Giao diện sáng, chữ đen.</p>
-        <p class="contentDefault theme-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
-        <p class="contentDefault color-red">Màu Red: được nhấn mạnh khi chọn Red.</p>
-        <p class="contentDefault color-blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
-        <p class="contentDefault color-green">Màu Green: được nhấn mạnh khi chọn Green.</p>
-        <p class="contentDefault lang-vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
-        <p class="contentDefault lang-en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
-        <p class="contentDefault opt-advanced">Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng giao diện.</p>
-        <p class="contentDefault opt-eco">Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.</p>
-        <p class="contentDefault opt-warning">Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.</p>
+        <div class="contentArea">
+            <p class="contentDefault theme-light">Theme Light: Giao diện sáng, chữ đen.</p>
+            <p class="contentDefault theme-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+            <p class="contentDefault color-red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+            <p class="contentDefault color-blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+            <p class="contentDefault color-green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+            <p class="contentDefault lang-vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
+            <p class="contentDefault lang-en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
+            <p class="contentDefault opt-advanced">Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng giao diện.</p>
+            <p class="contentDefault opt-eco">Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.</p>
+            <p class="contentDefault opt-warning">Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.</p>
+        </div>
     </div>
-
-</div>
-
 </body>
 </html>
