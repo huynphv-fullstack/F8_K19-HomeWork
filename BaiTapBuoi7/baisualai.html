@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trung tâm cấu hình giao diện</title>
+
+    <style>
+
+        /* == COLOR VARIABLES == */
+        :root{
+          --panel-bg:#f9fafb;
+          --panel-border:#ddd;
+
+          --title-bg:#f98000;
+          --title-text:#f9fafb;
+
+          --group-bg:#e5e7eb;
+          --group-text:#111827;
+
+          --label-bg:#eef2ff;
+          --label-text:#4b5563;
+
+          --content-area:#f3f4f6;
+          --content-bg:#ffffff;
+          --content-text:#9ca3af;
+
+          --light-bg:#fff8cc;
+          --light-text:#8b5e00;
+          --dark-bg:#111827;
+          --dark-text:#f9fafb;
+          --themelight-bg:#fff8cc;
+          --themelight-text:#111827;
+          --themedark-bg:#111827;
+          --themedark-text:#f9fafb;
+
+
+          --red-bg:#fee2e2;
+          --red-text:#7f1d1d;
+          --blue-bg:#dbeafe;
+          --blue-text:#1d4ed8;
+          --green-bg:#dcfce7;
+          --green-text:#166534;
+
+          --vi-bg:#bbf7d0;
+          --vi-text:#166534;
+          --en-bg:#bfdbfe;
+          --en-text:#1d4ed8;
+          --langvi-text:#166534;
+          --langen-text:#1d4ed8;
+
+          --adv-bg:#fef3c7;
+          --adv-text:#92400e;
+          --eco-bg:#bbf7d0;
+          --eco-text:#15803d;
+          --war-bg:#fee2e2;
+          --war-text:#b91c1c;
+          --optadv-bg:#fef3c7;
+          --optadv-text:#92400e;
+          --opteco-bg:#bbf7d0;
+          --opteco-text:#166534;
+          --optwar-bg:#fee2e2;
+          --optwar-text:#b91c1c;
+        }
+
+        /* == LAYOUT == */
+
+        [name='panel']{
+          width:750px;
+          margin:30px auto;
+          background:var(--panel-bg);
+          border:1px solid var(--panel-border);
+        }
+
+        h1{
+          background:var(--title-bg);
+          color:var(--title-text);
+          padding:12px;
+          font-size:22px;
+          font-weight:bold;
+          margin:0;
+        }
+
+        .group-title{
+          background:var(--group-bg);
+          color:var(--group-text);
+          width:fit-content;
+        }
+
+        label{
+          padding:4px 8px;
+          border-radius:4px;
+          background:var(--label-bg);
+          color:var(--label-text);
+          margin-right:10px;
+          cursor:pointer;
+        }
+
+        .contentArea{
+          background:var(--content-area);
+          padding-top:10px;
+        }
+
+        .contentDefault{
+          padding:8px 12px;
+          background:var(--content-bg);
+          color:var(--content-text);
+          margin-bottom:6px;
+        }
+
+        /* == THEME == */
+
+        /* Highlight label khi chọn Light */
+        #light:checked + label{
+          background:var(--light-bg);
+          color:var(--light-text);
+        }
+
+        /* Highlight label khi chọn Dark */
+        #dark:checked + label{
+          background:var(--dark-bg);
+          color:var(--dark-text);
+        }
+
+        /* Khi radio Light được chọn → highlight dòng mô tả theme-light */
+        #light:checked ~ .contentArea .theme-light{
+          background:var(--themelight-bg);
+          color:var(--themelight-text);
+        }
+
+        /* Khi radio Dark được chọn → highlight dòng mô tả theme-dark */
+        #dark:checked ~ .contentArea .theme-dark{
+          background:var(--themedark-bg);
+          color:var(--themedark-text);
+        }
+
+        /* == COLOR == */
+
+        /* Highlight label khi chọn màu đỏ */
+        #red:checked + label{
+          background:var(--red-bg);
+          color:var(--red-text);
+        }
+
+        /* Highlight label khi chọn màu xanh dương */
+        #blue:checked + label{
+          background:var(--blue-bg);
+          color:var(--blue-text);
+        }
+
+        /* Highlight label khi chọn màu xanh lá */
+        #green:checked + label{
+          background:var(--green-bg);
+          color:var(--green-text);
+        }
+
+        /* Khi chọn Red → highlight dòng mô tả color-red */
+        #red:checked ~ .contentArea .color-red{
+          background:var(--red-bg);
+          color:var(--red-text);
+        }
+
+        /* Khi chọn Blue → highlight dòng mô tả color-blue */
+        #blue:checked ~ .contentArea .color-blue{
+          background:var(--blue-bg);
+          color:var(--blue-text);
+        }
+
+        /* Khi chọn Green → highlight dòng mô tả color-green */
+        #green:checked ~ .contentArea .color-green{
+          background:var(--green-bg);
+          color:var(--green-text);
+        }
+
+        /* == LANGUAGE == */
+
+        #vi:checked + label{
+          background:var(--vi-bg);
+          color:var(--vi-text);
+        }
+
+        #en:checked + label{
+          background:var(--en-bg);
+          color:var(--en-text);
+        }
+
+        /* Khi chọn VI → làm nổi bật dòng tiếng Việt */
+        #vi:checked ~ .contentArea .lang-vi{
+          color:var(--langvi-text);
+          font-size:18px;
+          font-weight:bold;
+        }
+
+        /* Khi chọn EN → làm nổi bật dòng tiếng Anh */
+        #en:checked ~ .contentArea .lang-en{
+          color:var(--langen-text);
+          font-size:18px;
+          font-weight:bold;
+        }
+
+        /* == OPTIONS == */
+
+        #advanced:checked + label{
+          background:var(--adv-bg);
+          color:var(--adv-text);
+        }
+
+        #eco:checked + label{
+          background:var(--eco-bg);
+          color:var(--eco-text);
+        }
+
+        #warning:checked + label{
+          background:var(--war-bg);
+          color:var(--war-text);
+        }
+
+        /* Khi bật Advanced → highlight dòng advanced */
+        #advanced:checked ~ .contentArea .opt-advanced{
+          background:var(--optadv-bg);
+          color:var(--optadv-text);
+        }
+
+        /* Khi bật Eco → highlight dòng eco */
+        #eco:checked ~ .contentArea .opt-eco{
+          background:var(--opteco-bg);
+          color:var(--opteco-text);
+        }
+
+        /* Khi bật Warning → highlight dòng warning */
+        #warning:checked ~ .contentArea .opt-warning{
+          background:var(--optwar-bg);
+          color:var(--optwar-text);
+        }
+    </style>
+</head>
+
+<body>
+<div name="panel">
+    <h1>Trung tâm cấu hình giao diện (Demo)</h1>
+
+    <!-- THEME -->
+    <p class="group-title">Chọn giao diện (Theme):</p>
+    <input type="radio" name="theme" id="light" checked>
+    <label for="light">Light</label>
+    <input type="radio" name="theme" id="dark">
+    <label for="dark">Dark</label>
+
+    <!-- COLOR -->
+    <p class="group-title">Chọn màu chủ đạo (Color):</p>
+    <input type="radio" name="color" id="red" checked>
+    <label for="red">Red</label>
+    <input type="radio" name="color" id="blue">
+    <label for="blue">Blue</label>
+    <input type="radio" name="color" id="green">
+    <label for="green">Green</label>
+
+    <!-- LANGUAGE -->
+    <p class="group-title">Chọn ngôn ngữ (Language):</p>
+    <input type="radio" name="lang" id="vi" checked>
+    <label for="vi">VI</label>
+    <input type="radio" name="lang" id="en">
+    <label for="en">EN</label>
+
+    <!-- OPTIONS -->
+    <p class="group-title">Tùy chọn bổ sung (Options - Checkbox):</p>
+    <input type="checkbox" id="advanced">
+    <label for="advanced">Hiển thị mô tả nâng cao</label>
+    <input type="checkbox" id="eco">
+    <label for="eco">Bật chế độ Eco</label>
+    <input type="checkbox" id="warning">
+    <label for="warning">Hiển thị cảnh báo quan trọng</label>
+
+    <div class="contentArea">
+        <p class="contentDefault theme-light">Theme Light: Giao diện sáng, chữ đen.</p>
+        <p class="contentDefault theme-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+        <p class="contentDefault color-red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+        <p class="contentDefault color-blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+        <p class="contentDefault color-green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+        <p class="contentDefault lang-vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
+        <p class="contentDefault lang-en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
+        <p class="contentDefault opt-advanced">Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng giao diện.</p>
+        <p class="contentDefault opt-eco">Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.</p>
+        <p class="contentDefault opt-warning">Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
