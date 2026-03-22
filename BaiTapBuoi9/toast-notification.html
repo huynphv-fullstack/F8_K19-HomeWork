@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Toast Notification</title>
+    <style>
+        /* == COLOR VARIABLES == */
+        :root{
+            --open-btn-bg: #333333;
+            --open-btn-cl: #ffffff;
+            --toast-bg: #66c267;
+            --toast-cl: #ffffff;
+            --close-btn-bg: #4c914d;
+            --close-btn-cl: #ffffff;
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BODY ===== */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        /* ===== ẨN CHECKBOX ===== */
+        #toast-toggle {
+            display: none;
+        }
+
+        /* ===== NÚT MỞ ===== */
+        .open-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: var(--open-btn-bg);
+            color: var(--open-btn-cl);
+            cursor: pointer;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            display: none; /* mặc định ẩn */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--toast-bg);
+            color: var(--toast-cl);
+            padding: 15px 20px;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        /* ===== ẨN NÚT MỞ KHI ĐÃ MỞ ===== */
+        #toast-toggle:checked ~ .open-btn {
+            display: none;
+        }
+
+        /* ===== HIỆN TOAST KHI CHECKED ===== */
+        #toast-toggle:checked ~ .toast {
+            display: block;
+        }
+
+        /* ===== NỘI DUNG TOAST ===== */
+        .toast-content {
+            display: inline-block;
+        }
+
+        /* ===== NÚT ĐÓNG ===== */
+        .close-btn {
+            float: right;
+            margin-left: 10px;
+            cursor: pointer;
+            background: var(--close-btn-bg);
+            color: var(--close-btn-cl);
+            padding: 2px 8px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toast-toggle">
+    <label for="toast-toggle" class="open-btn">Hiện thông báo</label>
+    <div class="toast">
+        <label for="toast-toggle" class="close-btn">X</label>
+        <div class="toast-content">🎉 Lưu thành công!</div>
+    </div>
+</body>
+</html>
