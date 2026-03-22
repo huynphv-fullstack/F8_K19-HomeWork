@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hình với Border</title>
+    <style>
+        /* == COLOR VARIABLES == */
+        :root{
+            --body-bg: #f5f5f5;
+            --transparent-cl: transparent;
+            --square-bd: #d25e48;
+            --rectangle-bd: #95bae2;
+            --rising-triangle-bd: #6dc978;
+            --downward-triangle-bd: #e3a031;
+            --left-triangle-bd: #905cb2;
+            --right-triangle-bd: #d48332;
+            --trapezium-bd: #61b99d;
+            --wide-triangle-bd: #3a485d;
+            --acute-triangle-bd: #ad4430;
+            --isosceles-triangle-bd: #c05c19;
+            --right-arrow-bd: #529e86;
+            --left-arrow-bd: #8348a9;
+            --ribbon-bd: #d15841;
+            --f8-bg: #d15841;
+        }
+
+        /* --- RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- BODY --- */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: var(--body-bg);
+            counter-reset: shape-counter;
+        }
+        .label, .label-f8 {
+            counter-increment: shape-counter;
+        }
+        .label::before, .label-f8::before {
+            content: counter(shape-counter) ". ";
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-end;
+            margin-top: 20px;
+        }
+        .shape-wrapper {
+            text-align: center;
+        }
+        .label {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* --- TẠO HÌNH --- */
+        /* 1. HÌNH VUÔNG */
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--square-bd);
+        }
+        /* 2. HÌNH CHỮ NHẬT */
+        .rectangle {
+            width: 140px;
+            height: 80px;
+            border: 3px solid var(--rectangle-bd);
+        }
+        /* 3. TAM GIÁC LÊN */
+        .rising-triangle {
+            width: 0;
+            border-left: 50px solid var(--transparent-cl);
+            border-right: 50px solid var(--transparent-cl);
+            border-bottom: 100px solid var(--rising-triangle-bd);
+        }
+        /* 4. TAM GIÁC XUỐNG */
+        .downward-triangle {
+            width: 0;
+            border-left: 50px solid var(--transparent-cl);
+            border-right: 50px solid var(--transparent-cl);
+            border-top: 100px solid var(--downward-triangle-bd);
+        }
+        /* 5. TAM GIÁC TRÁI */
+        .left-triangle {
+            width: 0;
+            border-top: 50px solid var(--transparent-cl);
+            border-bottom: 50px solid var(--transparent-cl);
+            border-right: 100px solid var(--left-triangle-bd);
+        }
+        /* 6. TAM GIÁC PHẢI */
+        .right-triangle {
+            width: 0;
+            border-top: 50px solid var(--transparent-cl);
+            border-bottom: 50px solid var(--transparent-cl);
+            border-left: 100px solid var(--right-triangle-bd);
+        }
+        /* 7. HÌNH THANG */
+        .trapezium {
+            width: 150px;
+            border-bottom: 80px solid var(--trapezium-bd);
+            border-left: 30px solid var(--transparent-cl);
+            border-right: 30px solid var(--transparent-cl);
+        }
+        /* 8. TAM GIÁC RỘNG */
+        .wide-triangle {
+            width: 0;
+            border-left: 70px solid var(--transparent-cl);
+            border-right: 70px solid var(--transparent-cl);
+            border-bottom: 50px solid var(--wide-triangle-bd);
+        }
+        /* 9. TAM GIÁC NHỌN */
+        .acute-triangle {
+            width: 0;
+            border-left: 30px solid var(--transparent-cl);
+            border-right: 30px solid var(--transparent-cl);
+            border-bottom: 100px solid var(--acute-triangle-bd);
+        }
+        /* 10. TAM GIÁC CÂN */
+        .isosceles-triangle {
+            width: 0;
+            border-left: 45px solid var(--transparent-cl);
+            border-right: 45px solid var(--transparent-cl);
+            border-bottom: 60px solid var(--isosceles-triangle-bd);
+        }
+        /* 11. MŨI TÊN PHẢI */
+        .right-arrow {
+            width: 0;
+            border-top: 40px solid var(--transparent-cl);
+            border-bottom: 40px solid var(--transparent-cl);
+            border-left: 70px solid var(--right-arrow-bd);
+            border-right: 60px solid var(--transparent-cl);
+        }
+        /* 12. MŨI TÊN TRÁI */
+        .left-arrow {
+            width: 0;
+            border-top: 40px solid var(--transparent-cl);
+            border-bottom: 40px solid var(--transparent-cl);
+            border-right: 70px solid var(--left-arrow-bd);
+            border-left: 60px solid var(--transparent-cl);
+        }
+        /* 13. LÁ CỜ */
+        .ribbon {
+            width: o;
+            border-top: 40px solid var(--ribbon-bd);
+            border-bottom: 40px solid var(--ribbon-bd);
+            border-right: 40px solid var(--transparent-cl);
+            border-left: 90px solid var(--ribbon-bd);
+        }
+        /* 14. CHỮ F8  */
+        .f8-container {
+            width: 300px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        .char-f {
+            display: inline-block;
+            width: 120px;
+            height: 220px;
+        }
+        .f-top {
+            width: 120px;
+            height: 30px;
+            background-color: var(--f8-bg);
+        }
+        .f-mid {
+            width: 120px;
+            height: 30px;
+            background-color: var(--f8-bg);
+            margin-top: 65px;
+        }
+        .f-spine {
+            width: 30px;
+            height: 220px;
+            background-color: var(--f8-bg);
+            margin-top: -125px;
+        }
+        .char-8 {
+            display: inline-block;
+            width: 140px;
+            margin-left: 20px;
+        }
+        .box8-top {
+            width: 140px;
+            height: 125px;
+            border: 30px solid var(--f8-bg);
+            background-color: var(--transparent-cl);
+        }
+        .box8-bottom {
+            width: 140px;
+            height: 125px;
+            border: 30px solid var(--f8-bg);
+            background-color: var(--transparent-cl);
+            margin-top: -30px;
+        }
+        .label-f8 {
+            display: inline-block;
+            width: 280px;
+            padding-top: 10px;
+            padding-left: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Các hình có thể tạo được với Border</h2>
+    <div class="container">
+        <div class="shape-wrapper">
+            <div class="square"></div>
+            <div class="label">Hình vuông</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="rectangle"></div>
+            <div class="label">Hình chữ nhật</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="rising-triangle"></div>
+            <div class="label">Tam giác lên</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="downward-triangle"></div>
+            <div class="label">Tam giác xuống</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="left-triangle"></div>
+            <div class="label">Tam giác trái</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="right-triangle"></div>
+            <div class="label">Tam giác phải</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="trapezium"></div>
+            <div class="label">Hình thang</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="shape-wrapper">
+            <div class="wide-triangle"></div>
+            <div class="label">Tam giác rộng</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="acute-triangle"></div>
+            <div class="label">Tam giác nhọn</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="isosceles-triangle"></div>
+            <div class="label">Tam giác cân</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="right-arrow"></div>
+            <div class="label">Mũi tên phải</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="left-arrow"></div>
+            <div class="label">Mũi tên trái</div>
+        </div>
+        <div class="shape-wrapper">
+            <div class="ribbon"></div>
+            <div class="label">Ribbon/Lá cờ</div>
+        </div>
+    </div>
+    <div class="f8-container">
+        <div class="char-f">
+            <div class="f-top"></div>
+            <div class="f-mid"></div>
+            <div class="f-spine"></div>
+        </div>
+        <div class="char-8">
+            <div class="box8-top"></div>
+            <div class="box8-bottom"></div>
+        </div>
+        <div class="label-f8">F8</div>
+    </div>
+</body>
+</html>
