@@ -1,0 +1,128 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    --header-bg: #ffffff;
+    --header-bd: #dddddd;
+    --menu1-cl: #333333;
+    --menu1-cl-hover: #d62828;
+    --menu1-cl-bd: #d62828;
+    --dropdown-bg: #ffffff;
+    --dropdown-bd: #dddddd;
+    --dropdown-cl: #333333;
+    --dropdown-hover-bg: #f5f5f5;
+    --dropdown-hover-cl: #d62828;
+    --icon-menu: #555555;
+    --iocn-dropdown: #777777;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--header-bg);
+    border-bottom: 0.0625rem solid var(--header-bd);
+}
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0.5rem 0;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.5625rem;
+}
+.logo img {
+    width: 2.375rem;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+    display: inline-block;
+}
+
+/* ===== MENU CẤP 1 ===== */
+.menu {
+    list-style: none;
+    vertical-align: middle;
+}
+.menu > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 1.5625rem;
+}
+.menu > li > div {
+    font-weight: bold;
+    color: var(--menu1-cl);
+    padding: 0.375rem 0;
+    display: inline-block;
+}
+.menu > li:hover > div {
+    color: var(--menu1-cl-hover);
+    border-bottom: 0.125rem solid var(--menu1-cl-bd);
+}
+
+/* ===== DROPDOWN CẤP 1 ===== */
+.dropdown {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    min-width: 12.5rem;
+    background: var(--dropdown-bg);
+    border: 0.0625rem solid var(--dropdown-bd);
+    list-style: none;
+    display: none;
+    z-index: 10;
+}
+.menu > li:hover > .dropdown {
+    display: block;
+}
+.dropdown li {
+    position: relative;
+}
+.dropdown li div {
+    display: block;
+    padding: 0.375rem 0.625rem;
+    color: var(--dropdown-cl);
+}
+.dropdown li div:hover {
+    background: var(--dropdown-hover-bg);
+    color: var(--dropdown-hover-cl);
+}
+
+/* ===== DROPDOWN CẤP 2 ===== */
+.level-2 {
+    top: 0;
+    left: 12.39rem;
+    display: none;
+}
+.dropdown li:hover > .level-2 {
+    display: block;
+}
+
+/* ===== ICON ===== */
+/* Icon cấp 1 */
+.menu > li.has-sub > div::after {
+    content: " \25BE";
+    font-size: 0.625rem;
+    color: var(--icon-menu);
+    margin-left: 0.3rem;
+}
+/* Icon cấp 2 */
+.dropdown li.has-sub > div::after {
+    position: absolute;
+    content: " \25B8";
+    font-size: 0.625rem;
+    color: var(--iocn-dropdown);
+    right: 1rem;
+}
