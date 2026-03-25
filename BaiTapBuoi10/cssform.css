@@ -1,0 +1,236 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    --open-btn-bg: #f05123;
+    --open-btn-cl: #fff;
+    --open-btn-hover: #d8431c;
+    --modal-bg: #fff;
+    --h2-cl: #1e293b;
+    --desc-cl: #64748b;
+    --label-cl: #334155;
+    --required-cl: #ef4444;
+    --input-bg: #f8fafc;
+    --input-bd: #e2e8f0;
+    --tooltip-bg: #1e293b;
+    --tooltip-cl: #fff;
+    --tooltip-bd: #1e293b;
+    --submit-bg: #a855f7;
+    --submit-cl: #fff;
+    --submit-hover: #9333ea;
+    --error-cl: #f05123;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-image:  linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ===== BUTTON OPEN ===== */
+.open-btn {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10rem;
+    height: 3rem;
+    background: var(--open-btn-bg);
+    color: var(--open-btn-cl);
+    text-align: center;
+    line-height: 3rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+.open-btn:hover {
+    background: var(--open-btn-hover);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40rem;
+    height: 50rem;
+    background: var(--modal-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+#modal-toggle {
+    display: none;
+}
+#modal-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== BUTTON CLOSE ===== */
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ===== TEXT ===== */
+h2 {
+    text-align: center;
+    color: var(--h2-cl);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.desc {
+    text-align: center;
+    color: var(--desc-cl);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ===== FORM ===== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    color: var(--label-cl);
+
+}
+.required {
+    color: var(--required-cl);
+}
+
+/* ===== INPUT ===== */
+.input-wrap {
+    position: relative;
+    margin-top: 0.5rem;
+}
+input {
+    width: 36rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    background: var(--input-bg);
+    border: 0.0625rem solid var(--input-bd);
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+
+/* ===== CHECKBOX ===== */
+.checkbox-item {
+    position: relative;
+    display: inline-block;
+    width:36rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+.checkbox-item span:first-of-type {
+    position: absolute;
+    top: 1rem;
+    left: 1.7rem;
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-cl);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    opacity: 0;
+    visibility: hidden;
+}
+.input-wrap:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+.checkbox-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== ARROW ===== */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: var(--tooltip-bd) transparent transparent transparent;
+}
+
+/* ===== BUTTON SUBMIT ===== */
+.submit-btn {
+    width: 36rem;
+    height: 3rem;
+    background: var(--submit-bg);
+    color: var(--submit-cl);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background: var(--submit-hover);
+}
+
+/* ===== ERROR ===== */
+/* ===== Phần này em làm thêm để checkbox ít nhất phải chọn 1 lựa chọn,
+ a xem có phù hợp không ạ e biết chưa phù hợp yêu cầu đề bài nhưng em chưa nghĩ và tìm ra cách khác ===== */
+.error-text {
+    display: block;
+    color: var(--error-cl);
+    font-size: 1rem;
+    margin-top: 0.7rem;
+}
+.form-group:has(.checkbox-item input:checked) .error-text {
+    display: none;
+}
+form:not(:has(.checkbox-item input:checked)) button[class="submit-btn"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
