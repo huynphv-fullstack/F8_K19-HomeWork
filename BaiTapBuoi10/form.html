@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form tư vấn</title>
+    <link rel="stylesheet" href="cssform.css">
+</head>
+<body>
+<!-- CHECKBOX ĐIỀU KHIỂN MODAL -->
+<input type="checkbox" id="modal-toggle">
+<!-- NÚT MỞ -->
+<label for="modal-toggle" class="open-btn">Tư vấn ngay</label>
+<!-- OVERLAY -->
+<div class="overlay">
+    <!-- CLICK OVERLAY ĐỂ ĐÓNG -->
+    <label for="modal-toggle" class="overlay-bg"></label>
+    <!-- Modal -->
+    <div class="modal">
+        <!-- NÚT ĐÓNG -->
+        <label for="modal-toggle" class="close-btn">&times;</label>
+        <h2>Đăng ký tư vấn</h2>
+        <p class="desc">Điền thông tin để được tư vấn lộ trình học phù hợp</p>
+        <form action="https://api-gateway.fullstack.edu.vn/action_page.php">
+            <!-- HỌ TÊN -->
+            <div class="form-group">
+                <label>Họ và tên <span class="required">&#42;</span></label>
+                <div class="input-wrap">
+                    <input type="text" placeholder="Nguyễn Văn A" required>
+                    <span class="tooltip">Nhập họ và tên đầy đủ của bạn</span>
+                </div>
+            </div>
+            <!-- SĐT -->
+            <div class="form-group">
+                <label>Số điện thoại <span class="required">&#42;</span></label>
+                <div class="input-wrap">
+                    <input type="tel" placeholder="0912345678" required>
+                    <span class="tooltip">Số điện thoại để chúng tôi liên hệ tư vấn</span>
+                </div>
+            </div>
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label>Email</label>
+                <div class="input-wrap">
+                    <input type="email" placeholder="example@gmail.com">
+                    <span class="tooltip">Email nhận thông tin khóa học (không bắt buộc)</span>
+                </div>
+            </div>
+            <!-- CHECKBOX -->
+            <div class="form-group">
+                <label>Khóa học quan tâm <span class="required">&#42;</span></label>
+                <label class="checkbox-item" for="course-html">
+                    <input type="checkbox" id="course-html">
+                    <span>HTML & CSS</span>
+                    <span class="tooltip">Khóa nền tảng xây dựng giao diện web</span>
+                </label>
+                <label class="checkbox-item" for="course-js">
+                    <input type="checkbox" id="course-js">
+                    <span>JavaScript</span>
+                    <span class="tooltip">Ngôn ngữ lập trình cho web động</span>
+                </label>
+                <label class="checkbox-item" for="course-frontend">
+                    <input type="checkbox" id="course-frontend">
+                    <span>Front-end lộ trình</span>
+                    <span class="tooltip">Lộ trình hoàn chỉnh trở thành Front-end Developer</span>
+                </label>
+                <label class="checkbox-item" for="course-react">
+                    <input type="checkbox" id="course-react">
+                    <span>ReactJS</span>
+                    <span class="tooltip">Thư viện JavaScript phổ biến nhất hiện nay</span>
+                </label>
+                <label class="checkbox-item" for="course-other">
+                    <input type="checkbox" id="course-other">
+                    <span>Chưa rõ – cần tư vấn</span>
+                    <span class="tooltip">Chúng tôi sẽ tư vấn lộ trình phù hợp với bạn</span>
+                </label>
+                <p class="error-text">Vui lòng chọn ít nhất một khóa học trước khi gửi!</p>
+            </div>
+            <!-- BUTTON SUBMIT -->
+            <button class="submit-btn">ĐĂNG KÝ TƯ VẤN NGAY</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
