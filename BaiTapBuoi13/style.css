@@ -1,0 +1,95 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* STRIP */
+.strip {
+    width: 20%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* BACKGROUND COLORS */
+.strip:nth-child(1) { background: forestgreen; }
+.strip:nth-child(2) { background: khaki; }
+.strip:nth-child(3) { background: dodgerblue; }
+.strip:nth-child(4) { background: orange; }
+.strip:nth-child(5) { background: violet; }
+
+/* TITLE */
+.strip h2 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+}
+
+/* IMAGE */
+.strip img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+/* TITLE */
+.strip h2 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+}
+
+/* HOVER EFFECT */
+.strip:hover {
+    width: 100%;
+}
+.strip:hover img {
+    opacity: 1;
+    visibility: visible;
+}
+.strip:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.strip:hover h2 {
+    opacity: 0;
+    visibility: hidden;
+}
